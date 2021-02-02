@@ -17,7 +17,7 @@ body{
     border-radius: 10px;
 }
 .status:hover{
-    box-shadow: 0px 0px 10px gray;
+    box-shadow: 5px 10px 25px #888;
 }
 .deposit{
     background-color: slateblue;

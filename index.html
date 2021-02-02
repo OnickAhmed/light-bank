@@ -31,7 +31,7 @@
               <div class="col-md-4">
                   <div class="withdraw status">
                     <h5>Withdraw</h5>
-                    <h2>$<span id="currenWithdraw">00</span></h2>
+                    <h2>$<span id="currentWithdraw">00</span></h2>
                   </div>
               </div>
               <div class="col-md-4">
@@ -72,16 +72,18 @@
 
           //Deposit button event handler
           document.getElementById("btnDeposit").addEventListener("click", function(){
-            var number = getNumber("depositAmount");
-            updateSpanText("currentDeposit", number);
-            updateSpanText("currentBalance", number);
+            const depositAmount = getNumber("depositAmount");
+            updateSpanText("currentDeposit", depositAmount);
+            updateSpanText("currentBalance", depositAmount);
             document.getElementById("depositAmount").value = "";
           })
 
           //Withdraw button event handler
           document.getElementById("btnWithdraw").addEventListener("click", function(){
-              const withdrawNumber = getNumber("withdrawAmount");
-              console.log(withdrawNumber);
+              const withdrawAmount = getNumber("withdrawAmount");
+              updateSpanText("currentWithdraw", withdrawAmount);
+              updateSpanText("currentBalance", (-1 * withdrawAmount)); //Making it Negative value by ( -1 * )
+              document.getElementById("withdrawAmount").value = "";
           })
 
           //Helper Functions
